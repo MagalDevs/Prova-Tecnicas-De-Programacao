@@ -1,0 +1,22 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ListaNomes {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		 List<String> nomes = new ArrayList<>();
+		 
+		 String menuEnunciado = """
+		 		1 - Adicionar Nome
+		 		2 - apagar nome
+		 		3 - Ver tamanho da lista
+		 		4 - Pesquisar se uma Pessoa está na lista
+		 		5 - imprimir lista 
+		 		6 - Sair
+		 		""";
+		 System.out.println(menuEnunciado);
+	}
+}

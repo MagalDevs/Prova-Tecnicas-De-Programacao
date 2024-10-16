@@ -1,0 +1,48 @@
+package main;
+
+public class Pessoa {
+	private String nome;
+	private double altura;
+	private double peso;
+	
+	//Construtor
+	public Pessoa(String nome, double altura, double peso) {
+		this.nome = nome;
+		this.altura = altura;
+		this.peso = peso;
+	}
+	
+	
+	//Getters e Setters
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public double getAltura() {
+		return altura;
+	}
+	public void setAltura(double altura) {
+		this.altura = altura;
+	}
+	
+	public double getPeso() {
+		return peso;
+	}
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	
+	//métodos
+	public void calculeImc(double peso, double altura) {
+		double imc = peso / (altura * altura);
+		if(imc >= 18.5 && imc <= 24.9) {
+			System.out.println("Peso Normal");
+		}else {
+			System.out.print("Sobrepeso");
+		}
+	}
+}

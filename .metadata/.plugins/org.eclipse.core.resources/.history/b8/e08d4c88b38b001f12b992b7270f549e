@@ -1,0 +1,58 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		while(true) {
+			System.out.print("Deseja cadastrar uma Pessoa?(S/N)");
+			String menu = scanner.next().toLowerCase();
+			
+			switch(menu) {
+				case "s":
+					scanner.nextLine(); 
+					
+					System.out.print("Digite o Nome:");
+					String nome = scanner.nextLine();
+					System.out.println("");
+					
+					Double peso = 0.0;
+					while(true) {
+						System.out.print("Digite o Peso(0kg - 200kg):");
+						peso = scanner.nextDouble();
+						if(peso > 200 || peso < 0) {
+							System.out.println("Peso Inválido, digite novamente");
+							continue;
+						}else {
+							break;
+						}
+					}
+					System.out.println("");
+					
+					System.out.print("Digite o altura(ex: 1,70):");
+					Double altura = scanner.nextDouble();
+					System.out.println("");
+					
+					Pessoa pessoa = new Pessoa(nome, altura, peso);
+					
+					System.out.print("O Imc do " + pessoa.getNome() + " é: ");
+					pessoa.calculeImc(pessoa.getPeso(), pessoa.getAltura());
+					System.out.println("");
+					
+					break;
+					
+				case "n":
+					System.out.println("Encerrando Programa...");
+					return;
+					
+				default:
+					System.out.println("Opção inválida, Digite ou S ou N");
+					break;
+			}
+			
+		}
+		
+	}
+}
